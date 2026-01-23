@@ -1,0 +1,44 @@
+.article {
+    border: 1px solid var(--text-muted);
+    margin: 2rem 0;
+    padding: 1.2rem;
+}
+
+.article > a {
+    text-decoration: none;
+}
+
+.article .title--container {
+    font-size: 1.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.article .preview--container {
+    font-size: 1.4rem;
+    padding-bottom: 0.8rem;
+}
+
+.article .description--container {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    text-align: end;
+}
+
+.article .description--container .tags--container {
+    display: flex;
+}
+
+.tags--container .tag-item {
+    padding: 5px;
+    margin: 0 0.5rem;
+    min-width: 2.8rem;
+    text-align: center;
+    font-size: 1.15rem;
+    background-color: var(--accent);
+    color: var(--bg-main);
+}
+
+.article .description--container .date--container {
+    font-size: 1.4rem;
+}

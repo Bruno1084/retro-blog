@@ -1,10 +1,11 @@
+import { Link } from "react-router";
 import "./article.css"
 
-export function Article({ id, title, preview, tags, date }) {
+export function Article({ slug, title, preview, tags, date }) {
 
     return (
         <article className="article">
-            <a href={`/article/${id}`}>
+            <Link to={`/article/${slug}`}>
                 <div className="title--container">
                     <h4>{title}</h4>
                 </div>
@@ -21,7 +22,7 @@ export function Article({ id, title, preview, tags, date }) {
                         <p>{date}</p>
                     </div>
                 </div>
-            </a>
+            </Link>
         </article>
     );
 }

@@ -9,8 +9,8 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route index path='/' element={<HomePage />} />
-                <Route path='/categories/:id' element={<CategoryPage />} />
-                <Route path='/articles/:id' element={<ArticlePage />} />
+                <Route path='/categories/:tag' element={<CategoryPage />} />
+                <Route path='/article/:slug' element={<ArticlePage />} />
             </Routes>
         </BrowserRouter>
     )

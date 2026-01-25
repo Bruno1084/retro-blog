@@ -14,15 +14,15 @@ export function useArticles() {
             const { data, error } = await supabase
                 .from("articles")
                 .select(`
-          id,
-          slug,
-          title,
-          preview,
-          created_at,
-          articles_tags (
-            tags ( tag )
-          )
-        `)
+                    id,
+                    slug,
+                    title,
+                    preview,
+                    created_at,
+                    articles_tags (
+                        tags ( tag )
+                    )
+                `)
                 .eq("is_active", true)
                 .order("created_at", { ascending: false });
 

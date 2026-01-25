@@ -9,13 +9,13 @@
 }
 
 .article .title--container {
-    font-size: 1.8rem;
-    padding-bottom: 0.8rem;
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
 }
 
 .article .preview--container {
-    font-size: 1.4rem;
-    padding-bottom: 0.8rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .article .description--container {

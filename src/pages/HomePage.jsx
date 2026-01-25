@@ -1,14 +1,13 @@
 import { Article } from "../components/article/Article";
-import { Header } from "../components/header/Header";
 import { useArticles } from "../hooks/useArticles";
+import { useState } from "react";
 
 export function HomePage() {
     const { articles, loading } = useArticles();
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
         <>
-            <Header />
-
             <main>
                 <div id="main--container">
                     <h1>Home Page</h1>

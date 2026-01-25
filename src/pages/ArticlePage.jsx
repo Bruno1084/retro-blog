@@ -11,8 +11,6 @@ export function ArticlePage() {
 
     return (
         <>
-            <Header />
-
             <main>
                 <div id="main--container">
 
@@ -42,7 +40,6 @@ export function ArticlePage() {
 
                 </div>
             </main>
-
         </>
     );
 }

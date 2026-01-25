@@ -8,38 +8,30 @@ export function ArticleFull({ title, preview, tags, date, content }) {
                 <h1>{title}</h1>
             </div>
             <div className="preview--container">
-                <h4>{preview}</h4>
-            </div>
-            <div className="description--container">
-                <div className="tags--container">
-                    {tags.map((value, index) => (
-                        <div className="tag-item" key={index}>{value}</div>
-                    ))}
-                </div>
-                <div className="date--container">
-                    <p>{date}</p>
-                </div>
+                <p>{preview}</p>
             </div>
             <div className="content--container">
                 {content.map((block, index) => {
                     switch (block.type) {
                         case "heading":
+                            const HeadingTag = `h${block.level || 2}`;
+
                             return (
-                                <div className="heading--container" key={index}>
-                                    <h3>{block.text}</h3>
+                                <div className="content heading--container" key={index}>
+                                    <HeadingTag>{block.text}</HeadingTag>
                                 </div>
                             );
 
                         case "paragraph":
                             return (
-                                <div className="paragraph--container" key={index}>
+                                <div className="content paragraph--container" key={index}>
                                     <p>{block.text}</p>
                                 </div>
                             );
 
                         case "image":
                             return (
-                                <div className="image--container" key={index}>
+                                <div className="content image--container" key={index}>
                                     <img src={block.url} alt={block.alt} loading={"lazy"} />
                                 </div>
                             );
@@ -48,6 +40,16 @@ export function ArticleFull({ title, preview, tags, date, content }) {
                             return null;
                     }
                 })}
+            </div>
+            <div className="description--container">
+                <div className="tags--container">
+                    {tags.map((value, index) => (
+                        <a href={`/${value}`} className="tag-item" key={index}>{value}</a>
+                    ))}
+                </div>
+                <div className="date--container">
+                    <p>{date}</p>
+                </div>
             </div>
         </div>
     );

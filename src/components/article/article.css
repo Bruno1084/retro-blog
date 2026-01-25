@@ -37,6 +37,7 @@
     font-size: 1.15rem;
     background-color: var(--accent);
     color: var(--bg-main);
+    text-decoration: none;
 }
 
 .article .description--container .date--container {

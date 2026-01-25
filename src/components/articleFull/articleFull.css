@@ -1,0 +1,38 @@
+.articleFull .title--container {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.articleFull .preview--container {
+    font-size: 1.65rem;
+    padding-bottom: 1rem;
+}
+
+.articleFull .description--container {
+    margin-bottom: 1rem;
+}
+
+.articleFull .description--container .tags--container {
+    display: flex;
+}
+
+.articleFull .content--container .image--container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.articleFull .content--container .image--container img {
+    height: auto;
+    width: 100%;
+}
+
+.articleFull .content--container .heading--container {
+    font-size: 1.2rem;
+
+}
+
+.articleFull .content--container .paragraph--container {
+  margin-bottom: 1.2rem;
+  font-size: 1.65rem;
+}

@@ -10,6 +10,14 @@ export function ArticleFull({ title, preview, tags, date, content }) {
             <div className="preview--container">
                 <p>{preview}</p>
             </div>
+            <div className="header--container">
+                <div className="author--container">
+                    <a href="https://porfolio-bruno.netlify.app/" target="_blank">Bruno</a>
+                </div>
+                <div className="date--container">
+                    <p>{date}</p>
+                </div>
+            </div>
             <div className="content--container">
                 {content.map((block, index) => {
                     switch (block.type) {
@@ -44,11 +52,8 @@ export function ArticleFull({ title, preview, tags, date, content }) {
             <div className="description--container">
                 <div className="tags--container">
                     {tags.map((value, index) => (
-                        <a href={`/${value}`} className="tag-item" key={index}>{value}</a>
+                        <a href={`/category/${value}`} className="tag-item" key={index}>{value}</a>
                     ))}
-                </div>
-                <div className="date--container">
-                    <p>{date}</p>
                 </div>
             </div>
         </div>

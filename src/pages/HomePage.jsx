@@ -1,10 +1,8 @@
 import { Article } from "../components/article/Article";
 import { useArticles } from "../hooks/useArticles";
-import { useState } from "react";
 
 export function HomePage() {
     const { articles, loading } = useArticles();
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
         <>
@@ -24,7 +22,6 @@ export function HomePage() {
                             slug={article.slug}
                             title={article.title}
                             preview={article.preview}
-                            tags={article.tags}
                             date={article.created_at}
                         />
                     ))}

@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import "./article.css"
 
-export function Article({ slug, title, preview, tags, date }) {
+export function Article({ id, slug, title, preview, date }) {
 
     return (
         <article className="article">
@@ -13,11 +13,6 @@ export function Article({ slug, title, preview, tags, date }) {
                     <p>{preview}</p>
                 </div>
                 <div className="description--container">
-                    <div className="tags--container">
-                        {tags.map((value, index) => (
-                            <div className="tag-item" key={index}>{value}</div>
-                        ))}
-                    </div>
                     <div className="date--container">
                         <p>{date}</p>
                     </div>

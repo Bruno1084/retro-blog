@@ -54,6 +54,7 @@ span:hover {
 
 /* Sidebar */
 .sidebar {
+    padding: 1.2rem;
     position: fixed;
     top: var(--header-height);
     left: 0;

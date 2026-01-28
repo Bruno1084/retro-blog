@@ -12,7 +12,7 @@ export function Header({ onToggleSidebar }) {
           ☰
         </button>
 
-        <a href="#" className="brand">
+        <a href="/" className="brand">
           <span className="name">Wind's Blog</span>
         </a>
       </div>

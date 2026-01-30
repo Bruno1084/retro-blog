@@ -9,7 +9,7 @@ export function CategoryPage() {
     return (
         <>
             <main>
-                <div id="main--container">
+                <div className="main--container">
                     <div className="categoryFull">
                         <div className="title--container">
                             <h1>{tag}</h1>

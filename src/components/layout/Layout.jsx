@@ -13,6 +13,13 @@ export function Layout({ children }) {
         <>
             <Header onToggleSidebar={() => setIsSidebarOpen(v => !v)} />
 
+            {isSidebarOpen && (
+                <div
+                    className="overlay"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             <Sidebar
                 isOpen={isSidebarOpen}
                 onClose={() => setIsSidebarOpen(false)}

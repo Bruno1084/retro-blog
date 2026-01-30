@@ -13,12 +13,12 @@ export function Header({ onToggleSidebar }) {
         </button>
 
         <a href="/" className="brand">
-          <span className="name">Wind's Blog</span>
+          <span className="name">Bruno's Blog</span>
         </a>
       </div>
 
       <div className="right--container">
-        <a href="#">About</a>
+        <a href="https://porfolio-bruno.netlify.app/" target="blank">About</a>
       </div>
     </header>
   );

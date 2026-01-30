@@ -7,7 +7,7 @@ export function HomePage() {
     return (
         <>
             <main>
-                <div id="main--container">
+                <div className="main--container">
                     <h1>Home Page</h1>
 
                     {loading && <p>Cargando artículos...</p>}

@@ -9,7 +9,7 @@ export function ArticlePage() {
     return (
         <>
             <main>
-                <div id="main--container">
+                <div className="main--container">
 
                     {loading && <p>Cargando artículos...</p>}
 

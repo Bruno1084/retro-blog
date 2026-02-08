@@ -1,5 +1,5 @@
-import { Article } from "../components/article/Article";
-import { useArticles } from "../hooks/useArticles";
+import { Article } from "../../components/article/Article";
+import { useArticles } from "../../hooks/useArticles";
 
 export function HomePage() {
     const { articles, loading } = useArticles();

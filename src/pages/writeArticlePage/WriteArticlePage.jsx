@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
-import { useWriteArticle } from "../hooks/useWriteArticle";
+import { useWriteArticle } from "../../hooks/useWriteArticle";
 import "@blocknote/mantine/style.css";
+import "./WriteArticlePage.css";
 
 export function WriteArticlePage() {
     const [blocks, setBlocks] = useState([]);

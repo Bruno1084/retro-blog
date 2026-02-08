@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./sidebar.css";
 
 export function Sidebar({ isOpen, onClose }) {
     return (

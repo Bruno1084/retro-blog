@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import { HomePage } from './pages/HomePage.jsx';
-import { CategoryPage } from './pages/CategoryPage.jsx';
-import { ArticlePage } from './pages/ArticlePage.jsx';
+import { HomePage } from './pages/homePage/HomePage.jsx';
+import { CategoryPage } from './pages/categoryPage/CategoryPage.jsx';
+import { ArticlePage } from './pages/articlePage/ArticlePage.jsx';
 import { Layout } from './components/layout/Layout.jsx';
-import { WriteArticlePage } from './pages/WriteArticlePage.jsx';
+import { WriteArticlePage } from './pages/writeArticlePage/WriteArticlePage.jsx';
 import { AuthProvider } from './auth/AuthProvider.jsx'
-import { Login } from './pages/Login.jsx';
+import { Login } from './pages/login/Login.jsx';
 import { ProtectedRoute } from './auth/ProtectedRoute.jsx';
 
 function App() {

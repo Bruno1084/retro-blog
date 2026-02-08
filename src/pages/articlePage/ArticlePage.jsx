@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
-import { useArticle } from "../hooks/useArticle";
-import { ArticleFull } from "../components/articleFull/articleFull";
+import { useArticle } from "../../hooks/useArticle";
+import { ArticleFull } from "../../components/articleFull/articleFull";
+import "./articlePage.css";
 
 export function ArticlePage() {
     const { slug } = useParams();
@@ -10,10 +11,10 @@ export function ArticlePage() {
         <>
             <div className="main--container">
 
-                {loading && <p>Cargando artículos...</p>}
+                {loading && <p className="p-details">Cargando artículos...</p>}
 
                 {!loading && article.length === 0 && (
-                    <p>No hay artículos publicados</p>
+                    <p className="p-details">No hay artículos publicados</p>
                 )}
 
                 {!loading && <ArticleFull

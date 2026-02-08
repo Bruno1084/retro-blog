@@ -1,5 +1,5 @@
-import { useCategory } from "../hooks/useCategory";
-import { Article } from "../components/article/Article";
+import { useCategory } from "../../hooks/useCategory";
+import { Article } from "../../components/article/Article";
 import { useParams } from "react-router";
 
 export function CategoryPage() {

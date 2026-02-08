@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Header } from "../header/Header";
 import { Sidebar } from "../sidebar/Sidebar";
-import "./Layout.css";
+import "./layout.css";
 
 export function Layout({ children }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);

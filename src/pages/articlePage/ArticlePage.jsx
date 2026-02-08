@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useArticle } from "../../hooks/useArticle";
-import { ArticleFull } from "../../components/articleFull/articleFull";
+import { ArticleFull } from "../../components/articleFull/ArticleFull";
 import "./articlePage.css";
 
 export function ArticlePage() {

@@ -2,13 +2,16 @@ import { useState } from "react";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
 import { useWriteArticle } from "../../hooks/useWriteArticle";
+import { useAuth } from "../../hooks/useAuth";
 import "@blocknote/mantine/style.css";
 import "./WriteArticlePage.css";
+import { useNavigate } from "react-router";
 
 export function WriteArticlePage() {
     const [blocks, setBlocks] = useState([]);
     const { publishArticle, loading, error } = useWriteArticle();
-
+    const { user } = useAuth();
+    const navigate = useNavigate();
 
     const editor = useCreateBlockNote({
         initialContent: [
@@ -25,6 +28,12 @@ export function WriteArticlePage() {
     };
 
     const handleSubmit = async () => {
+
+        if (blocks.length === 0) {
+            alert("El artículo no puede estar vacío.");
+            return;
+        }
+
         function extractTitle(blocks) {
             const h1 = blocks.find(
                 b => b.type === "heading" && b.props?.level === 1
@@ -58,8 +67,9 @@ export function WriteArticlePage() {
             slug: slugify(extractTitle(blocks)),
             content: blocks,
             author_id: user.id,
-            tags: selectedTags,
         });
+
+        navigate("/");
     };
 
     return (

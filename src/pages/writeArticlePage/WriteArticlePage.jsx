@@ -3,9 +3,9 @@ import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
 import { useWriteArticle } from "../../hooks/useWriteArticle";
 import { useAuth } from "../../hooks/useAuth";
-import "@blocknote/mantine/style.css";
-import "./WriteArticlePage.css";
 import { useNavigate } from "react-router";
+import "@blocknote/mantine/style.css";
+import "./writeArticlePage.css";
 
 export function WriteArticlePage() {
     const [blocks, setBlocks] = useState([]);

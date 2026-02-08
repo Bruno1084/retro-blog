@@ -11,12 +11,19 @@ export function useWriteArticle() {
         preview,
         slug,
         content,
-        author_id,
         tags = [],
     }) => {
         setLoading(true);
         setError(null);
         setSuccess(false);
+
+        const { data: { user } } = await supabase.auth.getUser();
+
+        if (!user) {
+            setError("Usuario no autenticado");
+            setLoading(false);
+            return;
+        }
 
         const { data: article, error: articleError } = await supabase
             .from("articles")
@@ -25,13 +32,14 @@ export function useWriteArticle() {
                 preview,
                 slug,
                 content,
-                author_id,
+                author_id: user.id,
                 is_active: true,
             })
             .select("id")
             .single();
 
         if (articleError) {
+            console.error(articleError);
             setError("Error al publicar el artículo");
             setLoading(false);
             return;
@@ -48,7 +56,8 @@ export function useWriteArticle() {
                 .insert(relations);
 
             if (tagsError) {
-                setError("El artículo se guardó, pero fallaron los tags");
+                console.error(tagsError);
+                setError("Artículo creado, pero error en tags");
             }
         }
 

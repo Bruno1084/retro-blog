@@ -18,6 +18,7 @@ export function Header({ onToggleSidebar }) {
       </div>
 
       <div className="right--container">
+        <a href="/write-article">Write</a>
         <a href="https://porfolio-bruno.netlify.app/" target="blank">About</a>
       </div>
     </header>

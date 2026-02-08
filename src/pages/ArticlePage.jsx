@@ -8,25 +8,23 @@ export function ArticlePage() {
 
     return (
         <>
-            <main>
-                <div className="main--container">
+            <div className="main--container">
 
-                    {loading && <p>Cargando artículos...</p>}
+                {loading && <p>Cargando artículos...</p>}
 
-                    {!loading && article.length === 0 && (
-                        <p>No hay artículos publicados</p>
-                    )}
+                {!loading && article.length === 0 && (
+                    <p>No hay artículos publicados</p>
+                )}
 
-                    {!loading && <ArticleFull
-                        key={article.id}
-                        title={article.title}
-                        preview={article.preview}
-                        tags={article.tags}
-                        date={article.date}
-                        content={article.content}
-                    />}
-                </div>
-            </main>
+                {!loading && <ArticleFull
+                    key={article.id}
+                    title={article.title}
+                    preview={article.preview}
+                    tags={article.tags}
+                    date={article.date}
+                    content={article.content}
+                />}
+            </div>
         </>
     );
 }

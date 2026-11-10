@@ -1,0 +1,333 @@
+/* Cuerpo de los documentos: papel, escala de lectura (plan, sección 10.4). */
+.prose {
+    font-size: var(--fs-body);
+    line-height: 1.75;
+    max-width: 68ch;
+}
+
+.prose > * + * {
+    margin-top: 1.25rem;
+}
+
+.prose h2 {
+    font-size: var(--fs-h2);
+    line-height: 1.35;
+    margin-top: 2.75rem;
+}
+
+.prose h3 {
+    font-size: var(--fs-h3);
+    line-height: 1.4;
+    margin-top: 2rem;
+}
+
+.prose h2 + *,
+.prose h3 + * {
+    margin-top: 0.75rem;
+}
+
+.prose ul,
+.prose ol {
+    padding-left: 1.5rem;
+}
+
+.prose li + li {
+    margin-top: 0.35rem;
+}
+
+.prose li::marker {
+    color: var(--ink-muted);
+}
+
+.prose :global(.contains-task-list) {
+    list-style: none;
+    padding-left: 0;
+}
+
+.prose input[type='checkbox'] {
+    appearance: none;
+    width: 0.85em;
+    height: 0.85em;
+    border: 1px solid var(--ink);
+    margin-right: 0.6rem;
+    vertical-align: -0.08em;
+}
+
+.prose input[type='checkbox']:checked {
+    background: var(--ink);
+    box-shadow: inset 0 0 0 2px var(--paper);
+}
+
+/* Wikilinks: subrayado punteado. Externos: subrayado fino + flecha (sección 10.5). */
+.prose :global(.wikilink) {
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1.5px;
+}
+
+.prose :global(.wikilink):hover {
+    text-decoration-style: solid;
+}
+
+.prose :global(.external)::after {
+    content: '\2197';
+    font-size: 0.8em;
+    margin-left: 0.15em;
+}
+
+.prose :global(.wikilink--broken) {
+    color: var(--ink-muted);
+    cursor: help;
+}
+
+.prose img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Citas y apartes: escritura del autor, quedan en papel. */
+.prose blockquote {
+    border-left: 2px solid var(--ink-accent);
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+.cita figcaption {
+    margin-top: 0.4rem;
+    padding-left: 1rem;
+    font-size: var(--fs-summary);
+    color: var(--ink-muted);
+}
+
+.aparte {
+    background: var(--paper-raised);
+    padding: 1rem 1.2rem;
+    font-size: var(--fs-summary);
+    font-style: italic;
+}
+
+.aparteLabel {
+    display: block;
+    font-style: normal;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.3rem;
+}
+
+/*
+ * Modelo manuscrito: anotaciones, tachaduras y agregados los escribe el autor,
+ * así que van en papel. El aire de manuscrito sale de la itálica, el filete en
+ * --ink-accent y las fechas en estilo metadato, no de una fuente manuscrita.
+ */
+.prose {
+    --nota-width: 190px;
+    --nota-gap: 1.5rem;
+}
+
+.nota {
+    border-left: 2px solid var(--ink-accent);
+    padding: 0.1rem 0 0.1rem 0.9rem;
+    font-size: var(--fs-summary);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.nota time {
+    display: block;
+    font-style: normal;
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.nota > * + * {
+    margin-top: 0.4rem;
+}
+
+.nota time + * {
+    margin-top: 0.15rem;
+}
+
+/* En línea (por defecto): la nota va justo después del bloque anotado. */
+.prose :global(.anotado-notas) {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Desde 1440px la nota pasa al margen izquierdo, alineada con el inicio de su bloque. */
+@media (min-width: 1440px) {
+    .prose :global(.anotado) {
+        display: grid;
+        grid-template-columns: var(--nota-width) minmax(0, 1fr);
+        column-gap: var(--nota-gap);
+        align-items: start;
+        margin-left: calc(-1 * (var(--nota-width) + var(--nota-gap)));
+    }
+
+    .prose :global(.anotado) > :first-child {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+    }
+
+    .prose :global(.anotado-notas) {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 0;
+    }
+
+    /* Un título anotado conserva su aire superior. */
+    .prose > :global(.anotado):has(> h2:first-child) {
+        margin-top: 2.75rem;
+    }
+
+    .prose > :global(.anotado):has(> h3:first-child) {
+        margin-top: 2rem;
+    }
+
+    .prose :global(.anotado-notas) .nota {
+        font-size: var(--fs-nav);
+        line-height: 1.55;
+    }
+}
+
+/* Tachado: texto eliminado. Agregado: sin subrayado, que sobre papel significa "link" (sección 10.5). */
+.prose del {
+    color: var(--ink-muted);
+    text-decoration-thickness: 1px;
+}
+
+.prose ins {
+    text-decoration: none;
+    background: var(--paper-raised);
+    padding: 0 0.15em;
+}
+
+.tachado,
+.agregado {
+    position: relative;
+}
+
+/* La fecha se ve con el mouse (title) o con foco de teclado. */
+.tachado:focus-visible::after,
+.agregado:focus-visible::after {
+    content: attr(data-fecha);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 4px;
+    padding: 2px 6px;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: var(--fs-meta);
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+/* Por escribir: un hueco declarado, sin fondo para no confundirse con un aparte. */
+.porEscribir {
+    border: 1px dashed var(--rule-strong);
+    padding: 0.8rem 1rem;
+    font-size: var(--fs-summary);
+    font-style: italic;
+    color: var(--ink-muted);
+}
+
+.porEscribirLabel {
+    display: block;
+    font-style: normal;
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.porEscribir > :not(.porEscribirLabel) {
+    margin-top: 0.3rem;
+}
+
+/* Código: es la única consola que aparece entre párrafos (sección 10.1). */
+.prose :not(pre) > code {
+    font-size: 0.9em;
+    background: var(--paper-raised);
+    padding: 0.1em 0.35em;
+}
+
+.prose pre {
+    background: var(--console);
+    color: var(--console-strong);
+    border-radius: 4px;
+    padding: 1rem 1.1rem;
+    overflow-x: auto;
+    font-size: var(--fs-summary);
+    line-height: 1.6;
+}
+
+.prose pre code {
+    font-size: inherit;
+}
+
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-summary);
+    line-height: 1.5;
+}
+
+.prose th,
+.prose td {
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.prose th {
+    font-weight: 500;
+    border-bottom-color: var(--ink);
+}
+
+.prose hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+}
+
+/* Notas al pie (remark-gfm). */
+.prose :global(.footnotes) {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: var(--fs-summary);
+}
+
+.prose :global(.footnotes) h2 {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 0;
+}
+
+.prose sup a {
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+.prose :global(.data-footnote-backref) {
+    margin-left: 0.3rem;
+}
+
+@media (max-width: 650px) {
+    .prose table {
+        display: block;
+        overflow-x: auto;
+    }
+}

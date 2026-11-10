@@ -1,0 +1,87 @@
+.filters {
+    display: grid;
+    gap: 0.6rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ink);
+}
+
+.row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.label {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    min-width: 3.5rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.chip {
+    background: transparent;
+    border: 1px solid var(--rule-strong);
+    padding: 2px 8px;
+    font-size: var(--fs-meta);
+    cursor: pointer;
+    transition: border-color var(--ease-quick), background var(--ease-quick);
+}
+
+.chip:hover {
+    border-color: var(--ink);
+}
+
+.chip:disabled {
+    cursor: default;
+    color: var(--ink-muted);
+    border-style: dashed;
+}
+
+.chip:disabled:hover {
+    border-color: var(--rule-strong);
+}
+
+.chipCount {
+    color: var(--ink-muted);
+}
+
+.active,
+.active:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+}
+
+.active .chipCount {
+    color: inherit;
+}
+
+.typeDescription {
+    margin-top: 1rem;
+    font-size: var(--fs-summary);
+    font-style: italic;
+    color: var(--ink-muted);
+}
+
+.count {
+    margin-top: 1rem;
+}
+
+.empty {
+    margin-top: 1.5rem;
+    color: var(--ink-muted);
+}
+
+@media (max-width: 650px) {
+    .row {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}

@@ -1,0 +1,66 @@
+.list {
+    margin-top: 3rem;
+}
+
+.list > h2 {
+    font-size: var(--fs-h2);
+    margin-bottom: 0.5rem;
+}
+
+.tag {
+    border-top: 1px solid var(--rule);
+    padding: 1rem 0;
+}
+
+.tag h3 {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.tag ul {
+    list-style: none;
+}
+
+.tag li + li {
+    margin-top: 0.8rem;
+}
+
+.doc {
+    font-weight: 500;
+}
+
+.meta,
+.none {
+    font-size: var(--fs-meta);
+    color: var(--ink-muted);
+}
+
+.connections {
+    font-size: var(--fs-summary);
+    padding-left: 1rem;
+    color: var(--ink-muted);
+}
+
+.report {
+    margin-bottom: 1.5rem;
+}
+
+.report summary {
+    cursor: pointer;
+    color: var(--console-accent);
+}
+
+.report ul {
+    list-style: none;
+    margin: 0.6rem 0;
+}
+
+.report code {
+    color: var(--console-strong);
+}
+
+.error {
+    color: var(--console-accent);
+}

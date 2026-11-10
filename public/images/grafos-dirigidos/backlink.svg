@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="240" viewBox="0 0 720 240" font-family="'IBM Plex Mono', ui-monospace, Consolas, monospace">
+  <defs>
+    <marker id="solid" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9a4c0b"/>
+    </marker>
+    <marker id="dashed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6b5f4e"/>
+    </marker>
+  </defs>
+  <rect width="720" height="240" fill="#e9e1d1"/>
+  <rect x="60" y="80" width="160" height="80" fill="#f2ede3" stroke="#2a231b"/>
+  <text x="140" y="129" text-anchor="middle" font-size="28" fill="#2a231b">A</text>
+  <rect x="500" y="80" width="160" height="80" fill="#f2ede3" stroke="#2a231b"/>
+  <text x="580" y="129" text-anchor="middle" font-size="28" fill="#2a231b">B</text>
+  <line x1="220" y1="105" x2="496" y2="105" stroke="#9a4c0b" stroke-width="2" marker-end="url(#solid)"/>
+  <text x="360" y="64" text-anchor="middle" font-size="16" fill="#9a4c0b">[[B]] en A: arista saliente</text>
+  <line x1="500" y1="140" x2="224" y2="140" stroke="#6b5f4e" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#dashed)"/>
+  <text x="360" y="196" text-anchor="middle" font-size="16" fill="#6b5f4e">la misma arista vista desde B: backlink</text>
+</svg>

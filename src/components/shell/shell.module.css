@@ -1,0 +1,131 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--console);
+    color: var(--console-text);
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: var(--header-height);
+    padding: 0 var(--gutter);
+}
+
+.skip {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    background: var(--console-accent);
+    color: var(--console);
+    padding: 0.4rem 0.6rem;
+    font-size: var(--fs-nav);
+}
+
+.skip:focus-visible {
+    top: 0.5rem;
+    outline-color: var(--console-strong);
+}
+
+.logo {
+    font-family: var(--font-logo);
+    font-size: 1.35rem;
+    letter-spacing: 0.06em;
+    color: var(--console-accent);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    color: var(--console-strong);
+}
+
+.logo:focus-visible,
+.nav a:focus-visible,
+.menuButton:focus-visible {
+    outline-color: var(--console-accent);
+}
+
+/* Cursor del logo: la única animación decorativa del sitio (sección 10.5). */
+.cursor {
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.nav ul {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+}
+
+.nav a {
+    font-size: var(--fs-nav);
+    color: var(--console-text);
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: var(--console-accent);
+}
+
+.nav .current {
+    color: var(--console-strong);
+    text-decoration: underline;
+    text-underline-offset: 0.35em;
+}
+
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--console-strong);
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0.4rem;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .menuButton {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--console);
+        border-top: 1px solid var(--console-border);
+        padding: 0.5rem var(--gutter) 1rem;
+        transform: translateY(-0.5rem);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 150ms ease, transform 150ms ease, visibility 150ms;
+    }
+
+    .navOpen {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav a {
+        display: block;
+        padding: 0.7rem 0;
+        font-size: var(--fs-body);
+    }
+}

@@ -1,0 +1,71 @@
+.panelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.toggle {
+    background: none;
+    border: 1px solid var(--console-border);
+    color: var(--console-text);
+    padding: 1px 6px;
+    font-size: var(--fs-label);
+    cursor: pointer;
+}
+
+.toggle:hover,
+.toggle[aria-pressed='true'] {
+    border-color: var(--console-accent);
+    color: var(--console-accent);
+}
+
+.canvasFrame {
+    margin: 0 -0.25rem;
+}
+
+.stats {
+    list-style: none;
+    margin-top: 0.75rem;
+}
+
+.stats li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.9rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--console-border);
+    font-size: var(--fs-label);
+}
+
+.legend > div {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.legend dt {
+    color: var(--console-strong);
+    line-height: 0;
+}
+
+.legendNote {
+    flex-basis: 100%;
+}
+
+.emptyLocal {
+    padding: 0.5rem 0;
+}
+
+.more {
+    display: inline-block;
+    margin-top: 0.75rem;
+}

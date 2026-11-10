@@ -1,0 +1,140 @@
+.wrapper {
+    margin-top: 0.5rem;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 220px;
+}
+
+.search input,
+.group select {
+    background: transparent;
+    color: var(--console-strong);
+    border: 1px solid var(--console-border);
+    padding: 4px 6px;
+    font-size: var(--fs-meta);
+}
+
+.search input::placeholder {
+    color: var(--console-text);
+    opacity: 0.8;
+}
+
+.search input:focus,
+.group select:focus {
+    outline: 1px solid var(--console-accent);
+    border-color: var(--console-accent);
+}
+
+.group select option {
+    background: var(--console);
+}
+
+.results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    list-style: none;
+    background: var(--console);
+    border: 1px solid var(--console-border);
+}
+
+.results button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--console-strong);
+    padding: 4px 6px;
+    font-size: var(--fs-meta);
+    cursor: pointer;
+}
+
+.results button:hover,
+.results button:focus-visible {
+    color: var(--console-accent);
+}
+
+.group {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.group legend,
+.group > label {
+    width: 100%;
+    margin-bottom: 0.2rem;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.toggle,
+.button {
+    background: transparent;
+    color: var(--console-text);
+    border: 1px solid var(--console-border);
+    padding: 2px 7px;
+    font-size: var(--fs-meta);
+    cursor: pointer;
+}
+
+.toggle:hover,
+.button:hover {
+    color: var(--console-accent);
+    border-color: var(--console-accent);
+}
+
+.active,
+.active:hover {
+    background: var(--console-accent);
+    border-color: var(--console-accent);
+    color: var(--console);
+}
+
+.group .check {
+    width: auto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: var(--fs-meta);
+}
+
+.check input {
+    accent-color: var(--console-accent);
+}
+
+.canvas {
+    border-top: 1px solid var(--console-border);
+    margin: 0 -1rem;
+}
+
+.notice p {
+    font-size: var(--fs-summary);
+    line-height: 1.6;
+}
+
+.notice .button {
+    margin-top: 0.8rem;
+}

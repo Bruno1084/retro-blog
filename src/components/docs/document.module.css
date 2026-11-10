@@ -1,0 +1,116 @@
+.header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+.dates {
+    margin-top: 0.3rem;
+    font-size: var(--fs-meta);
+    color: var(--ink-muted);
+}
+
+.title {
+    font-size: var(--fs-h1);
+    line-height: 1.25;
+    margin: 0.6rem 0 0.75rem;
+}
+
+.summary {
+    color: var(--ink-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.byline {
+    margin-top: 1rem;
+    font-size: var(--fs-meta);
+    color: var(--ink-muted);
+}
+
+.toc {
+    border-left: 2px solid var(--rule-strong);
+    padding: 0.2rem 0 0.2rem 1rem;
+    margin-bottom: 2rem;
+    font-size: var(--fs-summary);
+}
+
+.toc h2,
+.backlinks > h2 {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+}
+
+.toc ol {
+    list-style: none;
+}
+
+.toc li + li {
+    margin-top: 0.25rem;
+}
+
+.toc a {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    color: var(--ink-accent);
+    text-decoration: underline;
+}
+
+.tocNested {
+    padding-left: 1.2rem;
+}
+
+.backlinks {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ink);
+}
+
+.empty {
+    font-size: var(--fs-summary);
+    color: var(--ink-muted);
+}
+
+/* Tabla de tipos en /about: misma voz que las tablas del cuerpo. */
+.types {
+    margin-top: 3rem;
+}
+
+.types > h2 {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+}
+
+.types table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-summary);
+    line-height: 1.5;
+}
+
+.types th,
+.types td {
+    border-bottom: 1px solid var(--rule);
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+.types thead th {
+    font-weight: 500;
+    border-bottom-color: var(--ink);
+}
+
+.types tbody th {
+    font-weight: 500;
+    white-space: nowrap;
+}

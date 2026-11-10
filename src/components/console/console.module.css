@@ -1,0 +1,54 @@
+.maturity {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.segments {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.segments span {
+    width: 10px;
+    height: 10px;
+    background: var(--console-border);
+}
+
+.segments .on {
+    background: var(--console-accent);
+}
+
+.rows {
+    list-style: none;
+}
+
+.row,
+.rows li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.rows li + li {
+    margin-top: 0.15rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--console-border);
+    margin: 0.8rem 0;
+}
+
+.bar {
+    display: block;
+    height: 4px;
+    margin: 0.2rem 0 0.5rem;
+    background: var(--console-border);
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: var(--console-accent);
+}

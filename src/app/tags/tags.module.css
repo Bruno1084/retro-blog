@@ -1,0 +1,39 @@
+.list {
+    list-style: none;
+    border-top: 1px solid var(--ink);
+}
+
+.list li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 0.3rem 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.name {
+    font-size: var(--fs-card-title);
+    font-weight: 500;
+    color: var(--ink);
+}
+
+a.name {
+    text-decoration: none;
+}
+
+a.name:hover {
+    color: var(--ink-accent);
+    text-decoration: underline;
+}
+
+.description {
+    grid-column: 1 / -1;
+    font-size: var(--fs-summary);
+    color: var(--ink-muted);
+}
+
+/* Tags sin documentos: se listan para mostrar la lista completa, sin link. */
+.empty .name {
+    color: var(--ink-muted);
+}

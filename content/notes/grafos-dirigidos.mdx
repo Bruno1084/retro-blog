@@ -1,0 +1,37 @@
+---
+title: Grafos dirigidos y backlinks
+type: nota
+status: brote
+tags: [software]
+created: 2026-10-06
+updated: 2026-10-06
+summary: Por qué un backlink no es más que una arista recorrida al revés.
+---
+
+Un grafo dirigido es un conjunto de nodos unidos por aristas que tienen sentido: ir de A a B no es lo mismo que ir de B a A. En este sitio cada documento es un nodo y cada wikilink es una arista que sale del documento que enlaza y llega al enlazado.
+
+![Dos documentos, A y B. A enlaza a B con una arista saliente; desde B, la misma arista leída al revés es un backlink.](/images/grafos-dirigidos/backlink.svg)
+
+## La arista invertida
+
+Cuando A menciona a B, A conoce la relación pero B no. Un **backlink** es esa misma arista leída desde el otro extremo. No hace falta guardar nada nuevo: alcanza con invertir el índice de aristas.
+
+```ts
+const backlinks = new Map<string, string[]>();
+for (const { source, target } of edges) {
+  backlinks.set(target, [...(backlinks.get(target) ?? []), source]);
+}
+```
+
+<Aparte>
+Por eso el pipeline recolecta todos los documentos antes de resolver un solo enlace: si resolviera mientras lee, un enlace a un archivo que todavía no leyó parecería roto.
+</Aparte>
+
+## Qué mide el grado
+
+El **grado** de un nodo es la suma de aristas entrantes y salientes. En el grafo global, los nodos con más grado se dibujan más grandes. Dos categorías merecen atención:
+
+1. Nodos **aislados**: grado cero. Ni mencionan ni son mencionados.
+2. Nodos **sin entrantes**: existen, pero ninguna página lleva a ellos navegando.
+
+El propósito del sitio está en [[introducción-al-jardin-digital|el log de propósito]]. Para profundizar, la entrada de [Wikipedia sobre grafos dirigidos](https://es.wikipedia.org/wiki/Grafo_dirigido) es un buen punto de partida.

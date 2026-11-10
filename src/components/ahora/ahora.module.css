@@ -1,0 +1,72 @@
+/* "Ahora": entradas tipo diario. Las escribe el autor, así que todo va en papel. */
+.header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* La fecha es el título: grande y en el acento de papel. */
+.fecha {
+    font-size: var(--fs-h1);
+    line-height: 1.25;
+    color: var(--ink-accent);
+}
+
+.titulo {
+    margin-top: 0.3rem;
+    font-size: var(--fs-h3);
+    font-style: italic;
+    color: var(--ink-muted);
+}
+
+.list {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--ink);
+}
+
+.list > h2 {
+    font-size: var(--fs-meta);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+}
+
+.list ol {
+    list-style: none;
+}
+
+.list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: var(--fs-summary);
+}
+
+.listTitulo {
+    font-style: italic;
+    color: var(--ink-muted);
+}
+
+.pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    font-size: var(--fs-summary);
+}
+
+.next {
+    margin-left: auto;
+    text-align: right;
+}
+
+.empty {
+    color: var(--ink-muted);
+}
